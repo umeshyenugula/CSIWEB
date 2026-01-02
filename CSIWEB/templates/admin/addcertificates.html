@@ -1,0 +1,68 @@
+<main id="main-content" class="admin-main container">
+
+    <!-- ADD CERTIFICATES SECTION -->
+    <section class="add-certificates-section">
+        <h2>Add Certificates for New Event</h2>
+
+        <form class="add-certificates-form">
+            <div class="form-group">
+                <label for="newEventName">Event Name</label>
+                <input type="text" id="newEventName" placeholder="Enter event name">
+            </div>
+
+            <div class="form-group">
+                <label for="eventBanner">Event Banner</label>
+                <input type="file" id="eventBanner" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="participantsCsv">Upload Participants CSV</label>
+                <input type="file" id="participantsCsv" accept=".csv">
+            </div>
+
+            <button class="submit-btn">Add Certificates</button>
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <!-- UPDATE CERTIFICATES SECTION -->
+    <section class="update-certificates-section">
+        <h2>Update Certificates for Existing Event</h2>
+
+        <!-- Event Selection Dropdown -->
+        <div class="form-group">
+            <label for="eventList">Select Event</label>
+            <select id="eventList" onchange="loadParticipants()">
+                <option value="">Select Event</option>
+                <option value="1">Resonance 2024</option>
+                <option value="2">SequenceSaga</option>
+                <option value="3">Generative AI Seminar</option>
+                <!-- More events will be dynamically added here -->
+            </select>
+        </div>
+
+        <!-- Participants List (Shows after selecting an event) -->
+        <div id="participantsList" style="display:none;">
+            <h3>Participants</h3>
+            <div class="participants-list">
+                <!-- Example Participant -->
+                <div class="participant-card">
+                    <p>John Doe</p>
+                    <div class="actions">
+                        <a href="/admin/pages/updatecertificate/1" class="btn-update">Update Certificate</a>
+                        <a href="/admin/pages/deletecertificate/1" class="btn-delete">Delete Certificate</a>
+                    </div>
+                </div>
+                <!-- Additional participants will appear here -->
+            </div>
+
+            <!-- Search Bar to Search Participants by Name -->
+            <div class="search-bar">
+                <label for="searchParticipant">Search Participant by Name</label>
+                <input type="text" id="searchParticipant" placeholder="Search by name" onkeyup="searchParticipants()">
+            </div>
+        </div>
+    </section>
+
+</main>

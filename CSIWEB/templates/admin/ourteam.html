@@ -1,0 +1,76 @@
+<main id="main-content" class="admin-main container">
+    <!-- Faculty Update Section -->
+    <section class="faculty-update-section">
+        <h2>Update Faculty Member</h2>
+        <form class="update-faculty-form">
+            <div class="form-group">
+                <label for="facultyName">Faculty Name</label>
+                <input type="text" id="facultyName" placeholder="Enter faculty name">
+            </div>
+
+            <div class="form-group">
+                <label for="facultyRole">Role</label>
+                <input type="text" id="facultyRole" placeholder="Enter role">
+            </div>
+
+            <div class="form-group">
+                <label for="facultyPhoto">Faculty Photo</label>
+                <input type="file" id="facultyPhoto" accept="image/*">
+            </div>
+
+            <button type="submit" class="submit-btn">Update Faculty</button>
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Core Members Update Section -->
+    <section class="core-members-update-section">
+        <h2>Update Core Team Member</h2>
+        <form class="update-core-member-form">
+            <div class="form-group">
+                <label for="coreMemberName">Core Member Name</label>
+                <input type="text" id="coreMemberName" placeholder="Enter core member name">
+            </div>
+
+            <div class="form-group">
+                <label for="coreMemberRole">Role</label>
+                <input type="text" id="coreMemberRole" placeholder="Enter role">
+            </div>
+
+            <div class="form-group">
+                <label for="coreMemberPhoto">Core Member Photo</label>
+                <input type="file" id="coreMemberPhoto" accept="image/*">
+            </div>
+
+            <button type="submit" class="submit-btn">Update Core Member</button>
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <!-- List of Faculty and Core Members -->
+    <section class="members-list-section">
+        <h2>Current Faculty & Core Members</h2>
+
+        <div class="members-list">
+            <!-- Faculty Member Example -->
+            <div class="member-card">
+                <img src="/static/uploads/faculty/john_doe.jpg" alt="John Doe">
+                <h3>John Doe</h3>
+                <p><strong>Role:</strong> Professor</p>
+                <a href="/admin/pages/updatefaculty/1" class="btn-update-member">Update</a>
+                <a href="/admin/pages/deletefaculty/1" class="btn-delete-member">Delete</a>
+            </div>
+
+            <!-- Core Member Example -->
+            <div class="member-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGA7VZMKJ02xXG31dbWWFFrgyvj6vSBKceAg&s" alt="Jane Doe">
+                <h3>Jane Doe</h3>
+                <p><strong>Role:</strong> Core Team Member</p>
+                <a href="/admin/pages/updatecoremember/2" class="btn-update-member">Update</a>
+                <a href="/admin/pages/deletecoremember/2" class="btn-delete-member">Delete</a>
+            </div>
+        </div>
+    </section>
+</main>

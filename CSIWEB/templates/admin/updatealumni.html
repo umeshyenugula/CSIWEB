@@ -1,0 +1,72 @@
+<main id="main-content" class="admin-main container">
+
+    <!-- Add or Update Alumni Section -->
+    <section class="alumni-update-section">
+        <h2>Add / Update Alumni Member</h2>
+
+        <form class="alumni-update-form">
+
+            <div class="form-group">
+                <label for="alumniName">Alumni Name</label>
+                <input type="text" id="alumniName" placeholder="Enter alumni name">
+            </div>
+
+            <div class="form-group">
+                <label for="alumniPosition">Position</label>
+                <input type="text" id="alumniPosition" placeholder="Ex: Coordinator, Member, Lead">
+            </div>
+
+            <div class="form-group">
+                <label for="alumniBatch">Batch</label>
+                <select id="alumniBatch">
+                    <option value="">Select Batch</option>
+                    <option value="2025">2025 Batch</option>
+                    <option value="2024">2024 Batch</option>
+                    <option value="2023">2023 Batch</option>
+                    <option value="2022">2022 Batch</option>
+                    <option value="2021">2021 Batch</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="alumniPhoto">Photo</label>
+                <input type="file" id="alumniPhoto" accept="image/*">
+            </div>
+
+            <button type="submit" class="submit-btn">Save Alumni Member</button>
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <!-- List of Alumni Members -->
+    <section class="alumni-list-section">
+        <h2>Current Alumni Members</h2>
+
+        <div class="alumni-list">
+
+            <!-- Sample Alumni Card -->
+            <div class="alumni-card">
+                <img src="/static/uploads/alumni/alumni1.jpg" alt="Alumni Photo">
+                <h3>Rahul Sharma</h3>
+                <p><strong>Position:</strong> Coordinator</p>
+                <p><strong>Batch:</strong> 2024</p>
+
+                <a href="/admin/pages/updatealumni/1" class="btn-update">Update</a>
+                <a href="/admin/pages/deletealumni/1" class="btn-delete">Delete</a>
+            </div>
+
+            <!-- Another Sample Alumni Card -->
+            <div class="alumni-card">
+                <img src="/static/uploads/alumni/alumni2.jpg" alt="Alumni Photo">
+                <h3>Swathi Reddy</h3>
+                <p><strong>Position:</strong> Member</p>
+                <p><strong>Batch:</strong> 2023</p>
+
+                <a href="/admin/pages/updatealumni/2" class="btn-update">Update</a>
+                <a href="/admin/pages/deletealumni/2" class="btn-delete">Delete</a>
+            </div>
+
+        </div>
+    </section>
+</main>
