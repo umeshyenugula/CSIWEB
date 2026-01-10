@@ -9,3 +9,4 @@ reportlab
 requests
 dnspython
 gunicorn
+python-dotenv
