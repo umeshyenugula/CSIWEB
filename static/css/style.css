@@ -3371,3 +3371,27 @@ body.admin-login-active {
   font-family: "Lexend", sans-serif;
   color: #111827;
 }
+@media (max-width: 768px) {
+
+  /* Kill extra padding causing left gap */
+  .container,
+  .container-fluid,
+  .page,
+  .main,
+  .wrapper,
+  .section,
+  .preview-wrapper {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
