@@ -20,22 +20,30 @@ import requests
 from io import BytesIO
 app = Flask(__name__)
 app.secret_key = "YOUR_SECRET_KEY"
-
-dotenv.load_dotenv()
-
-# MongoDB connection
-mongo_uri = dotenv.get_key(".env", "mongo_uri")
-client = MongoClient(mongo_uri)
+from dotenv import load_dotenv
+load_dotenv()
+MONGO_URI = os.getenv("mongo_uri")
+if not MONGO_URI:
+    raise RuntimeError("❌ MONGO_URI not set in environment variables")
+client = MongoClient(
+    MONGO_URI,
+    serverSelectionTimeoutMS=20000,
+    connectTimeoutMS=20000
+)
 db = client["CSI_WEBSITE"]
 admins = db["admin_users"]
-hero_collection = db["hero_section"]  
+hero_collection = db["hero_section"]
 events_collection = db["events"]
 team_collection = db["team_members"]
 alumni_collection = db["alumni"]
 certificate_participants = db["certificate_participants"]
-
+client.admin.command("ping")
+CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
+if not CLOUDINARY_URL:
+    raise RuntimeError("❌ CLOUDINARY_URL not set in environment variables")
 cloudinary.config(
-    cloudinary_url=dotenv.get_key(".env", "CLOUDINARY_URL")
+    cloudinary_url=CLOUDINARY_URL,
+    secure=True
 )
 @app.route("/")
 def index():
@@ -800,3 +808,4 @@ def certificate_template():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
