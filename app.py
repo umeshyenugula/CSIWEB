@@ -388,7 +388,10 @@ def get_team():
         "linkedin": 1,
         "instagram": 1,
         "order": 1
-    }).sort([("category", 1), ("order", 1)]))
+    }).sort([
+        ("category", 1),   # group by category A → Z
+        ("_id", 1)         # FIFO inside each category
+    ]))
 
     return jsonify({
         "status": "success",
@@ -848,3 +851,4 @@ def certificate_template():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
