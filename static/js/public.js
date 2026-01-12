@@ -607,8 +607,7 @@ async function loadAlumniPublic() {
       <div class="alumni">
         <img src="${a.image_url || 'https://www.srit.ac.in/wp-content/uploads/2022/01/csi-logo.png'}">
         <div class="overlay">
-          <h3>${a.name}</h3>
-          <p>${a.position} — Batch ${a.batch}</p>
+          <h3>${a.name}</h3>
         </div>
       </div>
     `;
