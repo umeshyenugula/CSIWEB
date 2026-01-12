@@ -394,8 +394,7 @@ function initAlumniPage() {
       list.innerHTML += `
         <div class="alumni-card">
           <img src="${a.image_url || '/static/img/default.png'}">
-          <h3>${a.name}</h3>
-          <p><b>Position:</b> ${a.position}</p>
+          <h3>${a.name}</h3>
           <p><b>Batch:</b> ${a.batch}</p>
 
           <button class="btn-delete" data-id="${a._id}">Delete</button>
